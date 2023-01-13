@@ -1,12 +1,84 @@
+
+
 *{
     font-family: "Poppins", sans-serif;
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    color: #B3C9DD;
 }
 body{
-    background: 
+    background: #A7A7B9; 
 }
 .container{
-    background: ;
+    background: #1f255e;
+    height: 80vh;
+    text-align: center;
+    width: 70vh;
+    position: relative;
+    margin: auto;
+    padding: 5%;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+.form__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 90%;
+}
+.btn #res, #calc{
+    padding: 5%;
+    width: 100px;
+    margin-left: 5%;
+    background-color: #2f73fe;
+    border: none;
+    border-radius: 2px;
+    color: #cfe0f0;
+    font-weight: bolder;
+    font-size: 1.8vh;
+}
+.btn #res{
+    background-color: transparent;
+
+}
+form{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+form input{
+    margin-bottom: 10%;
+    padding: 5%;
+    height: 5vh;
+    width: 11vh;
+    outline: none;
+    text-align: center;
+    font-size: 2vh;
+    border-radius: 5px;
+    border: none;
+}
+.grade_res{
+    position: absolute;
+    top: 20%;
+}
+.grade_res p{
+    font-size: 7vh;
+    margin-top: 10%;
+}
+.fin_res{
+    position: absolute;
+    top: 20%;
+    left: 75%;
+}
+.fgrade{
+    color: aliceblue;
+    font-size: 25vh;
+    margin-left: -30%;
 }

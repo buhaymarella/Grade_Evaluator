@@ -12,45 +12,60 @@
         <h1 class="container__title">
             Grade Evaluator
         </h1>
-        <form >
-            <div class="subject">
-                <label for="subject_1">English</label><br>
-                <input type="text" name="subject_1" id="eng">
+        <div class="form__container">
+            <form >
+                <h3>Subjects</h3><br>
+                <div class="subject">
+                    <label for="subject_1">English</label><br>
+                    <input type="text" name="subject_1" id="sub1" class="sub">
+                </div>
+                <div class="subject">
+                    <label for="subject_2">Math</label><br>
+                    <input type="text" name="subject_2" id="sub2" class="sub">
+                </div>
+                <div class="subject">
+                    <label for="subject_3">Filipino</label><br>
+                    <input type="text" name="subject_3" id="sub3" class="sub">
+                </div>
+                <div class="subject">
+                    <label for="subject_4">Programming</label><br>
+                    <input type="text" name="subject_4" id="sub4" class="sub">
+                </div>
+                <div class="subject">
+                    <label for="subject_5">Science</label><br>
+                    <input type="text" name="subject_5" id="sub5" class="sub">
+                </div>
+                <div class="total_avg">
+                    <label for="avg">Average</label><br>
+                    <input type="text" name="avg" id="avg" disabled value="" class="sub">
+                </div><br>
+                
+
+            </form>
+            <div class="btn">
+                <input type="button" value="Reset" id="res" onclick="resetGrade()">
+                <input type="button" value="Calculate" id="calc" onclick="calcGrade()">
             </div>
-            <div class="subject">
-                <label for="subject_2">Math</label><br>
-                <input type="text" name="subject_2" id="math">
+            
+            
+            <div class="grade_res">
+                <h3 class="grade_res-title">Grade</h3>
+                <div class="rate">
+                    <p id="sub_1" > </p>
+                    <p id="sub_2" > </p>
+                    <p id="sub_3" > </p>
+                    <p id="sub_4" > </p>
+                    <p id="sub_5" > </p>
+                </div>
+                
             </div>
-            <div class="subject">
-                <label for="subject_3">Filipino</label><br>
-                <input type="text" name="subject_3" id="fil">
+            <div class="fin_res">
+                <h3>Rate</h3>
+                <p id="final" class="fgrade sub"> </p>
             </div>
-            <div class="subject">
-                <label for="subject_4">Programming</label><br>
-                <input type="text" name="subject_4" id="prog">
-            </div>
-            <div class="subject">
-                <label for="subject_5">Science</label><br>
-                <input type="text" name="subject_5" id="sci">
-            </div>
-            <div class="total_avg">
-                <label for="avg">Average</label><br>
-                <input type="text" name="avg" id="avg" disabled>
-            </div>
-        </form>
-        <input type="button" value="Reset" id="res">
-        <input type="button" value="Calculate" id="calc">
-        <div class="grade_res">
-            <h3 class="grade_res-title">Grade</h3>
-            <p id="sub_1"> </p>
-            <p id="sub_2"> </p>
-            <p id="sub_3"> </p>
-            <p id="sub_4"> </p>
-            <p id="sub_5"> </p>
         </div>
-        <div class="fin_res">
-            <p id="final" class="fgrade"></p>
-        </div>
+        
     </div>
+    <script src="script/index.js"></script>
 </body>
 </html>
