@@ -1,17 +1,19 @@
-
-
-
 function calcGrade(){
-    const subGrade1 = parseInt(document.getElementById("sub1").value);
-    const subGrade2 = parseInt(document.getElementById("sub2").value);
-    const subGrade3 = parseInt(document.getElementById("sub3").value);
-    const subGrade4 = parseInt(document.getElementById("sub4").value);
-    const subGrade5 = parseInt(document.getElementById("sub5").value);
+    var score = [document.getElementById("sub1").value, //for getting the input from the user
+                document.getElementById("sub2").value,
+                document.getElementById("sub3").value,
+                document.getElementById("sub4").value,
+                document.getElementById("sub5").value
+];
+    var score_s = 0;
+    for (var i = 0; i < score.length; i++) { //for calculating the total summation of all grades.
+        score_s += parseInt(score[i]);
+    }
 
-    const totGrade = subGrade1 + subGrade2 + subGrade3 + subGrade4 + subGrade5;
-    const avgGrade = totGrade / 5;
+    const totGrade = score_s;
+    const avgGrade = totGrade / 5; //for calculating the average
 
-    if(avgGrade >= 85 ){
+    if(avgGrade >= 85 ){ //For giving a Rating based on TOTAL AVERAGE
         document.getElementById("final").innerText = "A"
     }else if(avgGrade <= 75){
         document.getElementById("final").innerText = "F"
@@ -20,53 +22,36 @@ function calcGrade(){
     }else{
         return;
     }
-
-    if(subGrade1 >= 85){
-        document.getElementById("sub_1").innerText = "A";
-    }else if(subGrade1 <= 75){
-        document.getElementById("sub_1").innerText = "C";
-    }else{
-        document.getElementById("sub_1").innerText = "B";
-    }
-    if(subGrade2 >= 85){
-        document.getElementById("sub_2").innerText = "A";
-    }else if(subGrade2 <= 75){
-        document.getElementById("sub_2").innerText = "C";
-    }else{
-        document.getElementById("sub_2").innerText = "B";
-    }
-    if(subGrade3 >= 85){
-        document.getElementById("sub_3").innerText = "A";
-    }else if(subGrade3 <= 75){
-        document.getElementById("sub_3").innerText = "C";
-    }else{
-        document.getElementById("sub_3").innerText = "B";
-    }
-    if(subGrade4 >= 85){
-        document.getElementById("sub_4").innerText = "A";
-    }else if(subGrade4 <= 75){
-        document.getElementById("sub_4").innerText = "C";
-    }else{
-        document.getElementById("sub_4").innerText = "B";
-    }
-    if(subGrade5 >= 85){
-        document.getElementById("sub_5").innerText = "A";
-    }else if(subGrade5 <= 75){
-        document.getElementById("sub_5").innerText = "C";
-    }else{
-        document.getElementById("sub_5").innerText = "B";
-    }
-
     document.getElementById("avg").value = avgGrade;  
-}
-function resetGrade(){
-    document.getElementById("sub1").value="";
-    document.getElementById("sub2").value="";
-    document.getElementById("sub3").value="";
-    document.getElementById("sub4").value="";
-    document.getElementById("sub5").value="";
-    document.getElementById("avg").value="";
-    document.getElementById("final").innerText="";
-    document.querySelector(".rate").innerText = " ";
+
+     // this is where the result of rating will store
+    let rating = [];
+    //will give a rating to the grade input
+    for(let i = 0; i < score.length; i++){ 
+        if (score[i] >= 85){
+            rating.push("A");
+        }else if (score[i] <= 75){
+            rating.push("C");
+        }else {
+            rating.push("B")
+        }
+    }
+
+    let finRating = document.querySelectorAll("#subject");
+    // this will show the result as inner HTML //
+    for (let i = 0; i < finRating.length; i++) { 
+        finRating[i].innerHTML = rating[i];
+    }
+// this will prevent the page from auto reloading when the calculate button is pressed.
+    return false;
 }
 
+// Will clear all the grades/inputs
+function resetGrade(){ 
+
+    var elems = document.getElementsByName("subject");
+    for(var i = 0; i < elems.length; i++){
+        elems[i].value = " ";
+        elems[i].innerHTML = " ";
+    }
+}

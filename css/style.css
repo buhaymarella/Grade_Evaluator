@@ -1,17 +1,30 @@
+:root{
+    /* COLORS */
+    --main-bgColor: #1f255e;
+    --sec-bgColor: #2f73fe;
+    --font-fam: "Poppins", sans-serif;
 
-
+    /* FONTS */
+    --font-fam-two: 'Times New Roman', Times, serif;
+}
+/* Start here */
 *{
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-fam);
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     color: #B3C9DD;
 }
 body{
-    background: #A7A7B9; 
+    background: var(--main-bgColor); 
 }
 .container{
-    background: #1f255e;
+    background: var(--main-bgColor);
+    border-radius: 10px;
+    border-radius: 7px;
+    background: linear-gradient(145deg, #212865, #1c2155);
+    box-shadow:  21px 21px 38px #161a43,
+                -21px -21px 38px #283079;
     height: 80vh;
     text-align: center;
     width: 70vh;
@@ -37,7 +50,8 @@ body{
     padding: 5%;
     width: 100px;
     margin-left: 5%;
-    background-color: #2f73fe;
+    background-color: var(--sec-bgColor);
+    border-radius: 9px;
     border: none;
     border-radius: 2px;
     color: #cfe0f0;
@@ -49,12 +63,11 @@ body{
 
 }
 form{
-    position: absolute;
     left: 10%;
-    top: 20%;
 }
 form input{
-    margin-bottom: 10%;
+    margin-bottom: 15%;
+    margin-top: 3%;
     padding: 5%;
     height: 5vh;
     width: 11vh;
@@ -63,22 +76,30 @@ form input{
     font-size: 2vh;
     border-radius: 5px;
     border: none;
+    color: var(--main-bgColor);
 }
-.grade_res{
+.grade_res,
+.fin_res,
+form{
     position: absolute;
     top: 20%;
 }
 .grade_res p{
     font-size: 7vh;
-    margin-top: 10%;
+    margin-top: 20%;
+}
+.rate{
+    margin-top: 45%;
 }
 .fin_res{
-    position: absolute;
-    top: 20%;
     left: 75%;
 }
 .fgrade{
     color: aliceblue;
     font-size: 25vh;
     margin-left: -30%;
+}
+
+#avg{
+    color: #cfe0f0;
 }
